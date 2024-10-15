@@ -174,6 +174,8 @@ Contributions are welcome! Please:
 
 [![Frontend CI/CD](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/frontend.yml/badge.svg)](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/frontend.yml)
 
+[![Backend CI/CD](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/backend.yml/badge.svg)](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/backend.yml)
+
 ---
 
 ## License
