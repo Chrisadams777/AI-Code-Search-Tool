@@ -1,0 +1,23 @@
+# infra/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: search-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: search-backend
+  template:
+    metadata:
+      labels:
+        app: search-backend
+    spec:
+      containers:
+      - name: backend
+        image: ghcr.io/your-repo/backend:latest
+        ports:
+        - containerPort: 8080
+        env:
+          - name: SOURCEGRAPH_API_URL
+            value: "https://sourcegraph.com/api"
