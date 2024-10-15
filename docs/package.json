@@ -1,1 +1,17 @@
-
+{
+  "name": "ai-code-search-tool-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@types/react": "^18.3.11",
+    "jshint": "^2.13.6",
+    "react": "^18.3.1"
+  }
+}
