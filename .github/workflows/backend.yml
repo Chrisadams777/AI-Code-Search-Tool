@@ -15,9 +15,11 @@ jobs:
           go-version: '1.18'
       - run: go test ./...
       - name: Build Docker Image
-        run: docker build -t ghcr.io/Chrisadams777/AI-Code-Search-Tool/backend:latest .
+        run: docker build --repo ${{ github:repository }}
       - name: Push Docker Image
         run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u Chrisadams777 --password-stdin
-          docker push ghcr.io/Chrisadams777/AI-Code-Search-Tool/backend:latest
+         gh login ${{ github:repository }} \
+          docker push ${{ github:repository }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
