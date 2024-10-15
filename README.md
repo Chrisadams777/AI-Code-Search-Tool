@@ -172,6 +172,8 @@ Contributions are welcome! Please:
 3. Commit your changes.
 4. Open a pull request.
 
+[![Frontend CI/CD](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/frontend.yml/badge.svg)](https://github.com/Chrisadams777/AI-Code-Search-Tool/actions/workflows/frontend.yml)
+
 ---
 
 ## License
