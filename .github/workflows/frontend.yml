@@ -24,10 +24,11 @@ jobs:
       # Set Git user identity for commits
       - name: Configure Git Identity
         run: |
-          git config --global user.email "adamschristopher777@gmail.com"
+          git config --global user.email "Chrisadams777@users.noreply.github.com"
           git config --global user.name "Chrisadams777"
-
       
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
