@@ -23,3 +23,31 @@ func KeywordSearch(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(resp.Body).Decode(&result)
 	json.NewEncoder(w).Encode(result)
 }
+
+func RegexSearch(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query().Get("query")
+	resp, err := http.Get(fmt.Sprintf("%s/search?q=%s&type=regexp", sourcegraphAPI, query))
+	if err != nil {
+		http.Error(w, "Regex search failed", http.StatusInternalServerError)
+		return
+	}
+	defer resp.Body.Close()
+
+	var result interface{}
+	json.NewDecoder(resp.Body).Decode(&result)
+	json.NewEncoder(w).Encode(result)
+}
+
+func SemanticSearch(w http.ResponseWriter, r *http.Request) {
+	query := r.URL.Query().Get("query")
+	resp, err := http.Get(fmt.Sprintf("%s/search?q=%s&type=semantic", sourcegraphAPI, query))
+	if err != nil {
+		http.Error(w, "Semantic search failed", http.StatusInternalServerError)
+		return
+	}
+	defer resp.Body.Close()
+
+	var result interface{}
+	json.NewDecoder(resp.Body).Decode(&result)
+	json.NewEncoder(w).Encode(result)
+}
