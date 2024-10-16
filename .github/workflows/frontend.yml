@@ -1,4 +1,3 @@
-# .github/workflows/frontend.yml
 name: Frontend CI/CD
 
 on:
@@ -13,8 +12,22 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-      - run: npm install
-      - run: npm run build
-      - run: npm run deploy
+      
+      # Install all dependencies, including devDependencies
+      - name: Install Dependencies
+        run: npm install
+      
+      # Build the project
+      - name: Build Project
+        run: npm run build
+      
+      # Set Git user identity for commits
+      - name: Configure Git Identity
+        run: |
+          git config --global user.email "Chrisadams777@users.noreply.github.com"
+          git config --global user.name "Chrisadams777"
 
-
+      
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        run: npm run deploy
