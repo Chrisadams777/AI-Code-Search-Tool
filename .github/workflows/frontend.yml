@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: '16'
       
-      # Install all dependencies, including devDependencies
+      # Install dependencies
       - name: Install Dependencies
         run: npm install
       
@@ -21,14 +21,19 @@ jobs:
       - name: Build Project
         run: npm run build
       
-      # Set Git user identity for commits
-      - name: Configure Git Identity
+      # Copy build output to /docs for GitHub Pages
+      - name: Move Build to Docs
+        run: |
+          rm -rf docs
+          mv frontend/build docs
+      
+      # Commit and push /docs to GitHub
+      - name: Commit and Push Docs
         run: |
           git config --global user.email "Chrisadams777@users.noreply.github.com"
           git config --global user.name "Chrisadams777"
-      
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
+          git add docs
+          git commit -m "Deploy to GitHub Pages"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npm run deploy
