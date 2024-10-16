@@ -5,12 +5,11 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"search-app/api"
-	"search-app/cache"
-	"search-app/config"
-	"search-app/db"
-
-	"github.com/gorilla/mux"
+    	"github.com/Chrisadams777/AI-Code-Search-Tool/backend/api"
+    	"github.com/Chrisadams777/AI-Code-Search-Tool/backend/cache"
+    	"github.com/Chrisadams777/AI-Code-Search-Tool/backend/config"
+    	"github.com/Chrisadams777/AI-Code-Search-Tool/backend/db"
+    	"github.com/gorilla/mux"
 )
 
 func main() {
