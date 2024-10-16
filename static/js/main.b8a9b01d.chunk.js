@@ -1,0 +1,2 @@
+(this["webpackJsonpai-code-search-tool-frontend"]=this["webpackJsonpai-code-search-tool-frontend"]||[]).push([[0],{12:function(e,t,o){"use strict";o.r(t);var c=o(1),n=o.n(c),r=o(3),d=o.n(r),s=o(0);var i=function(){return Object(s.jsx)("div",{children:Object(s.jsx)("h1",{children:"Welcome to the AI Code Search Tool"})})};d.a.render(Object(s.jsx)(n.a.StrictMode,{children:Object(s.jsx)(i,{})}),document.getElementById("root"))}},[[12,1,2]]]);
+//# sourceMappingURL=main.b8a9b01d.chunk.js.map
